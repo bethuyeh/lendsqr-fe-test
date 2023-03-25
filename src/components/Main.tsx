@@ -7,6 +7,7 @@ const Main = () => {
     <div className='content-main' style={{overflowX: 'auto'}}>
     <h2>Responsive Table</h2>
       <table>
+      <tbody> 
         <tr >
           <th style={{paddingRight:"24px"}}>First Name</th>
           <th style={{paddingRight:"24px"}}>Last Name</th>
@@ -77,7 +78,7 @@ const Main = () => {
           <td>67</td>
           <td>67</td>
         </tr>
-        
+      </tbody>  
       </table>
     </div></div>
   )
