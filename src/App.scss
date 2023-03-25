@@ -1,0 +1,258 @@
+@font-face {
+  font-family: 'Avenir Next';
+  // src: url('./fonts/avenir-next/AvenirNextLTPro-Bold.otf') format('opentype');
+  src: url('./fonts/avenir-next/AvenirNextLTPro-Regular.otf') format('embedded-opentype'),
+      //  url('fonts/fira/woff2/FiraSans-Regular.woff2') format('woff2'),
+      //  url('fonts/fira/woff/FiraSans-Regular.woff') format('woff'),
+      //  url('fonts/fira/woff2/FiraSans-Regular.ttf') format('truetype');
+}
+
+
+.login-page{
+  display: flex;
+  height: 900px;
+  padding-left: 7vw;
+}
+
+.sign-in{
+  width: 50%;
+}
+
+.sign-in .logo img{
+width: 164px;
+height: 36px;
+margin-top: 106px;
+}
+
+.signin-pic img{
+width: 600px;
+height: 337.57px;
+margin-top: 120px;
+}
+
+.login-form{
+margin-left: 7vw;
+margin-top: 22vh;
+width: 50%;
+  
+  h2{
+width: 183px;
+height: 55px;
+top: 215px;
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 55px;
+letter-spacing: -0.04em;
+color: #213F7D;
+  }
+
+.enter-details{
+  height: 28px;
+  top: 280px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  color: #545F7D;
+  }
+
+input[type="text"],
+input[type="password"] {
+  box-sizing: border-box;
+  margin-top: 18px;
+  width: 80%;
+  height: 50px;
+  background: #FFFFFF;
+  border: 2px solid rgba(84, 95, 125, 0.15);
+  border-radius: 5px;
+
+  }
+
+.forgot{
+  width: 187px;
+  height: 17px;
+  top: 516px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: right;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #39CDCC;
+}
+
+button{
+  box-sizing: border-box;
+  height: 50px;
+  top: 568px;
+  width: 80%;
+  background: #39CDCC;
+  border: 2px solid rgba(84, 95, 125, 0.15);
+  border-radius: 8px;
+}
+}
+
+
+  @media screen and (max-width: 1250px){
+      .signin-pic img{
+        width: 450px;
+        height: 300px;
+        }    
+
+}
+
+@media screen and (max-width: 945px){
+  .signin-pic img{
+    width: 350px;
+    height: 200px;
+    }    
+
+    .login-form{
+      margin-top: 14vh;
+      margin-left: 4vw;
+    }
+
+}
+
+@media screen and (max-width: 750px){
+  .login-page{
+    display: block;
+  }
+
+  .sign-in{
+    width: 100%;
+    margin-left: 3vw;
+  }
+
+  .sign-in-pic img{
+    width: 100%;
+  }
+
+  .login-form{
+    width: 100%;
+    margin-left: 3vw;
+  }
+
+  .login-form input, button{
+    width: 100%;
+  }
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e9d6d6;
+  color: #fff;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  height: 80px;
+  border-bottom: 1px solid rgba(108, 117, 125, 0.25);
+  z-index: 999;
+
+  .navbar-left{
+    margin-left: 4vw;
+  }
+
+  .navbar-right{
+    margin-right: 4vw;
+    display: flex;
+  }
+
+  &-logo {
+    width: 163px;
+    height: 30px;
+    margin-right: 50px;
+    align-self: center;
+  }
+
+  &-search {
+    width: 200px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 14px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-link {
+    color: #fff;
+    text-decoration: none;
+    margin: auto 80px auto 120px;
+    font-size: 16px;
+  }
+
+  &-notification-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  &-profile {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+
+    &-pic {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    &-username {
+      margin-right: 10px;
+    }
+  }
+}
+
+
+.navbar-aside {
+  padding-top: 100px;
+  width: 283px;
+  left: 0px;
+top: 0px;
+bottom: -121px;
+  display: block;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: calc(100vh - 60px);
+  float: left;
+  position: absolute;
+background: #9a3e3e;
+box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+  border-right: 1px solid rgba(108, 117, 125, 0.25);
+}
+
+.content-main {
+  padding: 30px 3%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-wrap {
+  margin-left: 283px;
+  background-color: #f8f9fa;
+}
+
+.dash-link{
+  display: flex;
+  padding: 1rem 0.5rem;
+}
+
+.menu-aside{
+  margin-left:  1rem;
+}
+

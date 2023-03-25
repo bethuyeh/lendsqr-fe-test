@@ -1,0 +1,547 @@
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+
+// interface User {
+//   name: string;
+//   email: string;
+//   maritalStatus: string;
+//   age: number;
+// }
+
+// const Dashboard = () => {
+//   const [users, setUsers] = useState<User[]>([]);
+//   const [selectedLink, setSelectedLink] = useState('');
+
+//   useEffect(() => {
+//     const fetchUsers = async () => {
+//       const response = await axios.get('https://mockapiurl.com/users');
+//       setUsers(response.data);
+//     };
+//     fetchUsers();
+//   }, []);
+
+//   const handleLinkClick = (link: string) => {
+//     setSelectedLink(link);
+//   };
+
+//   const renderMainPage = () => {
+//     switch (selectedLink) {
+//       case 'users':
+//         return (
+//           <>
+//             <h1>Users</h1>
+//             {users.map((user) => (
+//               <div key={user.email}>
+//                 <p>Name: {user.name}</p>
+//                 <p>Email: {user.email}</p>
+//                 <p>Marital Status: {user.maritalStatus}</p>
+//                 <p>Age: {user.age}</p>
+//               </div>
+//             ))}
+//           </>
+//         );
+//       // Add cases for other links here
+//       default:
+//         return <h1>Select a link from the sidebar</h1>;
+//     }
+//   };
+
+//   return (
+//     <div className="dashboard-container">
+//       <div className="sidebar">
+//         <ul>
+//           <li onClick={() => handleLinkClick('users')}>Users</li>
+//           <li onClick={() => handleLinkClick('orders')}>Orders</li>
+//           <li onClick={() => handleLinkClick('products')}>Products</li>
+//           <li onClick={() => handleLinkClick('inventory')}>Inventory</li
+
+
+
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+
+// interface User {
+//   name: string;
+//   email: string;
+//   maritalStatus: string;
+//   age: number;
+// }
+
+// const Dashboard: React.FC = () => {
+//   const [users, setUsers] = useState<User[]>([]);
+//   const [selectedLink, setSelectedLink] = useState('users');
+
+//   useEffect(() => {
+//     if (selectedLink === 'users') {
+//       axios.get('https://jsonplaceholder.typicode.com/users')
+//         .then(response => setUsers(response.data))
+//         .catch(error => console.log(error));
+//     } else {
+//       setUsers([]);
+//     }
+//   }, [selectedLink]);
+
+//   const handleLinkClick = (link: string) => {
+//     setSelectedLink(link);
+//   };
+
+//   return (
+//     <div className="dashboard">
+//       <div className="sidebar">
+//         <ul>
+//           <li><a href="#" onClick={() => handleLinkClick('users')}>Users</a></li>
+//           <li><a href="#" onClick={() => handleLinkClick('sales')}>Sales</a></li>
+//           <li><a href="#" onClick={() => handleLinkClick('orders')}>Orders</a></li>
+//           <li><a href="#" onClick={() => handleLinkClick('products')}>Products</a></li>
+//           <li><a href="#" onClick={() => handleLinkClick('analytics')}>Analytics</a></li>
+//         </ul>
+//       </div>
+//       <div className="main">
+//         {selectedLink === 'users' ? (
+//           <div className="user-list">
+//             {users.map((user: User) => (
+//               <div key={user.email}>
+//                 <h2>{user.name}</h2>
+//                 <p>Email: {user.email}</p>
+//                 <p>Marital Status: {user.maritalStatus}</p>
+//                 <p>Age: {user.age}</p>
+//               </div>
+//             ))}
+//           </div>
+//         ) : (
+//           <div className="placeholder">
+//             <h2>Select a link to view data</h2>
+//           </div>
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Dashboard;
+
+
+
+
+
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import axios from "axios";
+
+interface User {
+  name: string;
+  email: string;
+  maritalStatus: string;
+  age: number;
+}
+
+const Sidebar = () => {
+  return (
+    <nav>
+      <ul>
+        <li>
+          <Link to="/">Dashboard</Link>
+        </li>
+        <li>
+          <Link to="/users">Users</Link>
+        </li>
+        <li>
+          <Link to="/orders">Orders</Link>
+        </li>
+        <li>
+          <Link to="/products">Products</Link>
+        </li>
+        <li>
+          <Link to="/sales">Sales</Link>
+        </li>
+        <li>
+          <Link to="/settings">Settings</Link>
+        </li>
+        <li>
+          <Link to="/reports">Reports</Link>
+        </li>
+        <li>
+          <Link to="/analytics">Analytics</Link>
+        </li>
+        <li>
+          <Link to="/notifications">Notifications</Link>
+        </li>
+      </ul>
+    </nav>
+  );
+};
+
+const Users = () => {
+  const [users, setUsers] = useState<User[]>([]);
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const response = await axios.get(
+        "https://jsonplaceholder.typicode.com/users"
+      );
+      setUsers(response.data);
+    };
+    fetchUsers();
+  }, []);
+
+  return (
+    <div>
+      <h2>Users</h2>
+      <ul>
+        {users.map((user) => (
+          <li key={user.email}>
+            {user.name} ({user.email}), {user.maritalStatus}, {user.age} years old
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+const Dashboard = ()
+
+
+{"createdAt":"2072-12-27T03:44:22.522Z","orgName":"labore-dolor-et","userName":"Wilburn.Rice","email":"Maverick.Hyatt83@gmail.com","phoneNumber":"(553) 208-0727 x31321","lastActiveDate":"2099-02-28T23:17:40.013Z","profile":{"firstName":"Darian","lastName":"Rolfson","phoneNumber":"494-278-0946","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/725.jpg","gender":"Male","bvn":"815809412","address":"Gusikowski Locks","currency":"NGN"},"guarantor":{"firstName":"Celine","lastName":"Monahan","phoneNumber":"1-482-227-3654 x71086","gender":"Male","address":"O'Hara Centers"},"accountBalance":"496.00","accountNumber":"GWQUSEH1","socials":{"facebook":"@lendsqr","instagram":"@lendsqr","twitter":"@lendsqr"},"education":{"level":"Bsc","employmentStatus":"Employed","sector":"FinTech","duration":"2 Years","officeEmail":"Edna4@yahoo.com","monthlyIncome":["128.57","118.07"],"loanRepayment":"122.47"},"id":"1"}
+
+
+// TABULAR
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+</style>
+</head>
+<body>
+
+<h2>Responsive Table</h2>
+<p>If you have a table that is too wide, you can add a container element with overflow-x:auto around the table, and it will display a horizontal scroll bar when needed.</p>
+<p>Resize the browser window to see the effect. Try to remove the div element and see what happens to the table.</p>
+
+<div style="overflow-x:auto;">
+  <table>
+  <thead>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+    </thead>
+    <tr>
+      <td>Jill</td>
+      <td>Smith</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>Eve</td>
+      <td>Jackson</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+    </tr>
+    <tr>
+      <td>Adam</td>
+      <td>Johnson</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+    </tr>
+  </table>
+</div>
+
+</body>
+</html>
+
+
+{/* LOG IN PAGE */}
+import React, { useState, useEffect } from 'react';
+
+const HomeScreen = () => {
+  return (
+    <div>
+      <img src="dummy-image.png" alt="Dummy Image" />
+    </div>
+  );
+};
+
+const LoginForm = () => {
+  const [username, setUsername] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+
+  const handleLogin = () => {
+    // Check user details and perform login
+    {/* if (username === 'user' && password === 'password') { */}
+      // Save user details in local storage
+      {/* localStorage.setItem('username', username);
+      localStorage.setItem('password', password); */}
+
+      // Redirect to main page
+      window.location.href = '/main';
+    {/* } else {
+      alert('Invalid username or password');
+    }
+  }; */}
+
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder="Username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button onClick={handleLogin}>Login</button>
+    </div>
+  );
+};
+
+const LoginPage = () => {
+  return (
+    <div>
+      <h1>Login Page</h1>
+      <LoginForm />
+    </div>
+  );
+};
+
+{/* const Main = () => {
+  const username = localStorage.getItem('username');
+
+  return (
+    <div>
+      <h1>Welcome, {username}!</h1>
+      <p>This is the main page.</p>
+    </div>
+  );
+}; */}
+
+const App = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate a 3 second delay before showing the login page
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <HomeScreen />;
+  }
+
+  return (
+    <div>
+      <LoginPage />
+      <Main />
+    </div>
+  );
+};
+
+export default App;
+
+
+import React, { useState, useEffect } from 'react';
+
+interface LoginFormProps {
+  onLoginSuccess: () => void;
+}
+
+const HomeScreen = () => {
+  return (
+    <div>
+      <img src="dummy-image.png" alt="Dummy Image" />
+    </div>
+  );
+};
+
+const LoginForm = ({ onLoginSuccess }: LoginFormProps) => {
+  const [username, setUsername] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+
+  const handleLogin = () => {
+    // Check user details and perform login
+    if (username === 'user' && password === 'password') {
+      // Save user details in local storage
+      localStorage.setItem('username', username);
+      localStorage.setItem('password', password);
+
+      // Call onLoginSuccess callback
+      onLoginSuccess();
+    } else {
+      alert('Invalid username or password');
+    }
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder="Username"
+        value={username}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          setUsername(e.target.value)
+        }
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          setPassword(e.target.value)
+        }
+      />
+      <button onClick={handleLogin}>Login</button>
+    </div>
+  );
+};
+
+const LoginPage = () => {
+  return (
+    <div>
+      <h1>Login Page</h1>
+      <LoginForm
+        onLoginSuccess={() => {
+          window.location.href = '/main';
+        }}
+      />
+    </div>
+  );
+};
+
+interface MainProps {
+  username: string | null;
+}
+
+const Main = ({ username }: MainProps) => {
+  return (
+    <
+
+    {user.id ? (
+        <div>
+          Welcome, {user.username}! <button onClick={() => localStorage.removeItem('user')}>Log out</button>
+        </div>
+      ) : (
+        
+        <Login />
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+      )} */}
+
+
+
+      import { useState } from "react";
+import { Redirect } from "react-router-dom";
+
+interface User {
+  username: string;
+  password: string;
+}
+
+const LoginPage = () => {
+  const [user, setUser] = useState<User>({ username: "", password: "" });
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setUser({
+      ...user,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    // save user login details to localStorage
+    localStorage.setItem("user", JSON.stringify(user));
+    setIsLoggedIn(true);
+  };
+
+  if (isLoggedIn) {
+    // redirect user to welcome page if logged in
+    return <Redirect to="/welcome" />;
+  }
+
+  return (
+    <form onSubmit={handleLogin}>
+      <div>
+        <label htmlFor="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          value={user.username}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div>
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          value={user.password}
+          onChange={handleInputChange}
+        />
+      </div>
+      <button type="submit">Log in</button>
+    </form>
+  );
+};
+
+const WelcomePage = () => {
+  // get user details from localStorage
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
+  return <h1>Welcome {user.username}!</h1>;
+};
+
+export { LoginPage, WelcomePage };
